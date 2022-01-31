@@ -1,0 +1,154 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>maven_group_project</groupId>
+  <artifactId>maven_artifact_project</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>maven_artifact_project</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+ <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
+<dependency>
+    <groupId>com.itextpdf</groupId>
+    <artifactId>itextpdf</artifactId>
+    <version>5.5.13.1</version>
+</dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <!-- or whatever version you use -->
+          <source>11</source>
+          <target>11</target>
+        </configuration>
+      </plugin>
+      
+      <!-- PLUGIN 1-->
+      <plugin>
+      <!-- génération d'un site pour un projet-->
+   		 <groupId>org.apache.maven.plugins</groupId>
+   		 <artifactId>maven-site-plugin</artifactId>
+    	 <version>3.9.1</version>
+	  </plugin>
+	
+	  <!-- PLUGIN 2-->
+	  <plugin>
+	  <!-- Génère des rapports des plugins-->
+     	 <groupId>org.apache.maven.plugins</groupId>
+      	 <artifactId>maven-project-info-reports-plugin</artifactId>
+      <version>3.1.1</version>
+      </plugin>
+      
+      
+      <!-- PLUGIN 3:-->
+      <!-- Génère un rapport de couverture de code-->
+      <!-- Jacoco fournit trois métrique pouranalyyser visuellement-->
+      <plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.6</version>
+			<executions>
+				<execution>
+					<goals>
+						<goal>prepare-agent</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>report</id>
+					<phase>prepare-package</phase>
+					<goals>
+						<goal>report</goal>
+					</goals>
+					<configuration>
+						<outputDirectory>target/jacoco-report</outputDirectory>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+      
+    </plugins>
+</build>
+
+	<!-- SECTION DES RAPPORTS-->	
+ <reporting>
+  <plugins>
+  
+  <!-- PLUGIN CHECKSTYLES-->
+  <!-- Génère un rapport concernant le style de code utilisé par les développeurs-->	
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-checkstyle-plugin</artifactId>
+    <version>3.1.1</version>
+    <configuration>
+          <configLocation>google_checks.xml</configLocation>
+        </configuration>
+   </plugin>
+   
+   
+   <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-javadoc-plugin</artifactId>
+	<version>3.2.0</version>
+   </plugin>
+   
+     <!-- PLUGIN JXR :-->
+     <!--  Réalise un rapport croisé des sources du projet : permet de trouver les lignes de code-->
+   <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jxr-plugin</artifactId>  
+			<version>3.0.0</version>
+   </plugin>
+   
+   <!-- PLUGIN JACOCO préparation d'un rapport sur les tests-->
+   
+   <plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<reportSets>
+				<reportSet>
+					<reports>
+						<report>report</report>
+					</reports>
+				</reportSet>
+			</reportSets>
+		</plugin>
+		
+		
+		<!-- PLUGIN PDM ET CPD-->
+		<!--Détection des copier coller-->
+		
+		<!-- PLUGIN PDM -->
+		<!-- analyse le code de notre projet et de génère un rapport -->
+		<!--  exemple variable non utilisé -->
+		
+		<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.14.0</version>
+            </plugin>
+            
+ </plugins>
+</reporting>
+
+	
+
+</project>
+  
