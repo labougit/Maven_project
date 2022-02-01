@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<changelog>
+  
+<changeset datePattern="yyyyMMdd HH:mm:ss z" start="20220102 15:52:48 CET" end="20220202 15:52:48 CET">
+	<changelog-entry>
+		<date pattern="yyyy-MM-dd">2022-01-31</date>
+		<time pattern="HH:mm:ss">08:58:58</time>
+		<author><![CDATA[Luke Abougit <abougitluke@gmail.com>]]></author>
+		<file>
+			<action>added</action>
+			<name>pom.xml</name>
+			<revision>0d0f67343d3c5c32d485bc87fa77dc2c2f4d7f39</revision>
+		</file>
+		<file>
+			<action>modified</action>
+			<name>src/main/java/maven_group_project/maven_artifact_project/App.java</name>
+			<revision>0d0f67343d3c5c32d485bc87fa77dc2c2f4d7f39</revision>
+		</file>
+		<msg><![CDATA[project_maven]]></msg>
+	</changelog-entry>
+	<changelog-entry>
+		<date pattern="yyyy-MM-dd">2022-01-31</date>
+		<time pattern="HH:mm:ss">08:42:20</time>
+		<author><![CDATA[Luke Abougit <abougitluke@gmail.com>]]></author>
+		<file>
+			<action>added</action>
+			<name>src/main/java/maven_group_project/maven_artifact_project/App.java</name>
+			<revision>bc22f7d82e92acf824824c3f2125380707010bee</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/main/java/maven_group_project/maven_artifact_project/FirstPdf.java</name>
+			<revision>bc22f7d82e92acf824824c3f2125380707010bee</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/test/java/maven_group_project/maven_artifact_project/AppTest.java</name>
+			<revision>bc22f7d82e92acf824824c3f2125380707010bee</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/test/java/maven_group_project/maven_artifact_project/FirstPdfTest.java</name>
+			<revision>bc22f7d82e92acf824824c3f2125380707010bee</revision>
+		</file>
+		<msg><![CDATA[project_maven]]></msg>
+	</changelog-entry>
+</changeset>
+
+</changelog>
